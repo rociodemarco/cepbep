@@ -39,7 +39,7 @@ CREATE TABLE `ventas` (
   `id_trabajador` int,
   `id_cliente` int,
   `id_servicio` int,
-  `id_inventario` int,
+  `id_inventario` json,
   `precio_total` float,
   `fecha` timestamp
 );
@@ -53,5 +53,3 @@ ALTER TABLE `ventas` ADD FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id`)
 ALTER TABLE `ventas` ADD FOREIGN KEY (`id_trabajador`) REFERENCES `trabajadores` (`id`);
 
 ALTER TABLE `ventas` ADD FOREIGN KEY (`id_servicio`) REFERENCES `tipo_de_servicio` (`id`);
-
-ALTER TABLE `ventas` ADD FOREIGN KEY (`id_inventario`) REFERENCES `inventario` (`id`);
